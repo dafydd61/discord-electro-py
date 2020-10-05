@@ -1,4 +1,10 @@
+import os
+
 import discord
+from dotenv import load_dotenv
+
+load_dotenv()
+TOKEN = os.getenv('DISCORD_TOKEN')
 
 client = discord.Client()
 
@@ -40,4 +46,4 @@ async def on_message(message):
             response = 'Sorry - I don’t understand'
         await message.channel.send(response)
 
-client.run('NzYxNjg2MTE5OTA1MDk5ODQ2.X3eNeg.5Lsf6Hn1lhN1_O4DY_pKY-5YZvw')
+client.run(TOKEN)
